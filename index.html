@@ -1,1 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>OpenAI官网ChatGPT Plus代充值服务 | 24小时自助GPT代充 - 安全快速</title>
+    <meta name="description" content="提供专业、安全、快速的OpenAI官网ChatGPT Plus会员代充值服务。24小时自助充值系统，支持GPT代充和gptplus会员购买，正规渠道，快速到账，信誉保障。">
+    <meta name="keywords" content="gpt充值, GPT代充, gptplus会员, chatgpt plus代充, openai代充, gpt4充值, gpt会员">
+    <meta property="og:title" content="OpenAI官网ChatGPT Plus代充值服务 | 24小时自助">
+    <meta property="og:description" content="专业、安全、快速的ChatGPT Plus会员代充服务。24小时自助，正规渠道，快速到账。">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ChatGPT Plus Subscription Service",
+      "provider": {
+        "@type": "Organization",
+        "name": "ChatGPT Plus 专业代充"
+      },
+      "name": "ChatGPT Plus 会员代充服务",
+      "description": "提供安全、快速的OpenAI官网ChatGPT Plus会员24小时自助代充值服务。我们使用正规渠道，保证账户安全，并承诺快速到账。",
+      "offers": {
+        "@type": "Offer",
+        "price": "160.00",
+        "priceCurrency": "CNY",
+        "name": "ChatGPT Plus 会员 (一个月)",
+        "url": "https://gptplus.biz/recharge"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "CN"
+      },
+      "keywords": "gpt充值, GPT代充, gptplus会员, chatgpt plus代充"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部区域 */
+        .header {
+            text-align: center;
+            padding: 60px 0 50px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            background: #2c3e50;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 产品展示区 */
+        .product-section {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+            color: #f1c40f;
+        }
+
+        .product-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+        }
+
+        .product-price {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .price-prefix {
+            font-size: 1.6rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .price-amount {
+            font-size: 5rem;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #f1c40f, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .price-suffix {
+            font-size: 1.3rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        /* 帮助按钮样式 */
+        .help-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 25px auto 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .help-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        .product-period {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+            font-weight: 500;
+        }
+        
+        .product-period .qr-code {
+            width: 200px; 
+            height: 200px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 16px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 购买选项 */
+        .purchase-section {
+            padding: 50px 40px;
+            background: #2c3e50;
+        }
+
+        .purchase-title {
+            font-size: 2rem;
+            color: #ecf0f1;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .purchase-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .purchase-btn {
+            display: block;
+            padding: 30px 25px;
+            text-decoration: none;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .purchase-btn.primary {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+
+        .purchase-btn.secondary {
+            background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+            color: white;
+        }
+
+        .purchase-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .purchase-btn h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            letter-spacing: -0.3px;
+        }
+
+        .purchase-btn p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+            font-weight: 500;
+        }
+
+        /* 保障信息 */
+        .guarantee-section {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+        }
+
+        .guarantee-title {
+            font-size: 2rem;
+            color: #ecf0f1;
+            margin-bottom: 35px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .guarantee-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background: #2c3e50;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .guarantee-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            border-color: #3498db;
+        }
+
+        .guarantee-icon {
+            font-size: 2rem;
+            margin-right: 18px;
+            margin-top: 3px;
+        }
+
+        .guarantee-text h4 {
+            color: #ecf0f1;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            letter-spacing: -0.3px;
+        }
+
+        .guarantee-text p {
+            color: #bdc3c7;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* 视频教程区域 */
+        .video-section {
+            padding: 50px 40px;
+            background: #2c3e50;
+            text-align: center;
+        }
+
+        .video-title {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-player {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        /* 底部特色 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #2c3e50 0%, #212f3c 100%);
+        }
+
+        .feature-card {
+            background: rgba(52, 73, 94, 0.8);
+            padding: 35px 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: #3498db;
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .feature-card h4 {
+            color: #ecf0f1;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            letter-spacing: -0.3px;
+        }
+
+        .feature-card p {
+            color: #bdc3c7;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .purchase-options {
+                grid-template-columns: 1fr;
+            }
+
+            .product-section, .purchase-section, .guarantee-section, .video-section, .features {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header .subtitle {
+                font-size: 1rem;
+            }
+            .product-title {
+                font-size: 2rem;
+            }
+            .price-amount {
+                font-size: 3.5rem;
+            }
+            .purchase-btn h3 {
+                font-size: 1.2rem;
+            }
+            .purchase-btn p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 ChatGPT Plus 代充</h1>
+            <div class="subtitle">专业 • 安全 • 正规</div>
+        </header>
+
+        <div class="main-content">
+            <div class="product-section">
+                <div class="product-badge">✨ 不卷价格 • 只卷质量</div>
+                <h2 class="product-title">官网 ChatGPT Plus 会员</h2>
+                <div class="product-price">
+                    <span class="price-prefix">仅需</span>
+                    <div class="price-amount">¥160</div>
+                    <span class="price-suffix">/月</span>
+                </div>
+                <div class="product-period">
+                    <img src="image/27.png" alt="客服微信二维码" class="qr-code">
+                    <p>防失联客服微信【备注：Gpt代充】<br>(防添加频繁，会通过比较慢，请知悉)</p>
+                </div>
+                <a href="https://acn0d26eyhcl.feishu.cn/wiki/U3IHwzQUGi3I7Nk46bYcH8hxn0e?from=from_copylink" class="help-btn" target="_blank" rel="noopener noreferrer">📖 点此查看使用帮助</a>
+            </div>
+
+            <div class="purchase-section">
+                <h3 class="purchase-title">💳 先买卡密再进代充系统</h3>
+                <div class="purchase-options">
+                    <a href="https://yo.i6ls.com//links/687593ED" class="purchase-btn secondary" target="_blank" rel="noopener noreferrer">
+                        <h3>🎫 卡密自助购买</h3>
+                        <p>即买即发，自动发货</p>
+                    </a>
+                    <a href="https://gptplus.biz/recharge" class="purchase-btn primary" target="_blank" rel="noopener noreferrer">
+                        <h3>🤖 24小时代充系统</h3>
+                        <p>先买卡密，再进代充</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="guarantee-section">
+                <h3 class="guarantee-title">🛡️ 服务保障</h3>
+                <div class="guarantee-list">
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">🔒</div>
+                        <div class="guarantee-text">
+                            <h4>正规可靠</h4>
+                            <p>对接正规ios充值，不获取密码，安全保障。</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">💰</div>
+                        <div class="guarantee-text">
+                            <h4>强力保障</h4>
+                            <p>因充值封号0%，其他原因也无理由按天退款。</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">⚡</div>
+                        <div class="guarantee-text">
+                            <h4>快速到账</h4>
+                            <p>24小时自助充值，5分钟内开好</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">🧾</div>
+                        <div class="guarantee-text">
+                            <h4>可开发票</h4>
+                            <p>如需开具发票（需额外加点），请联系我们的客服人员。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-section">
+                <h3 class="video-title">🎬 操作流程</h3>
+                <div class="video-container">
+                    <video
+                        class="video-player"
+                        controls
+                        title="GPT Plus代充操作视频教程"
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%232c3e50'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter' font-size='24' fill='%23bdc3c7'%3E视频教程%3C/text%3E%3C/svg%3E">
+                        <source src="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/526974494642.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <span class="feature-icon">⭐</span>
+                    <h4>信誉保证</h4>
+                    <p>多年经验，值得信赖</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h4>专业服务</h4>
+                    <p>专注Gpt Plus代充服务</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💎</span>
+                    <h4>品质保障</h4>
+                    <p>高质量服务，用户好评</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
