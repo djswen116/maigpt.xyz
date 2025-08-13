@@ -444,6 +444,60 @@
                 font-size: 1rem;
             }
         }
+
+        /* 新增：弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7); /* 加深遮罩层 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .modal-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #34495e; /* 弹窗背景色匹配主题 */
+            color: #ecf0f1; /* 弹窗文字颜色 */
+            padding: 30px 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            max-width: 90%;
+            width: 450px;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .modal-overlay.visible .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-content .message {
+           font-size: 1.1rem;
+           line-height: 1.6;
+           margin: 0;
+        }
+        .modal-content .timer-text {
+           color: #bdc3c7; /* 计时器文字颜色 */
+           font-size: 1rem;
+           margin-top: 20px;
+        }
+        #modal-timer {
+            color: #f1c40f; /* 计时器数字高亮 */
+        }
     </style>
 </head>
 <body>
@@ -476,7 +530,7 @@
                         <h3>🎫 卡密自助购买</h3>
                         <p>即买即发，自动发货</p>
                     </a>
-                    <a href="https://gptplus.biz/recharge" class="purchase-btn primary" target="_blank" rel="noopener noreferrer">
+                    <a href="https://gptplus.biz/recharge" class="purchase-btn primary" rel="noopener noreferrer">
                         <h3>🤖 24小时代充系统</h3>
                         <p>先买卡密，再进代充</p>
                     </a>
@@ -550,5 +604,56 @@
             </div>
         </div>
     </div>
+    
+    <div id="custom-alert-modal" class="modal-overlay">
+      <div class="modal-content">
+        <p class="message">充值失败或卡住是太多人同时用繁忙，多点几次或晚点再试，也可发客服卡密和充值密钥内部处理！（提示会员的等会员到期再充）最近全网都供不应求！请理解！(人工处理到晚上12点，明天9点继续)</p>
+        <p class="timer-text">将在 <strong id="modal-timer">15</strong> 秒后自动跳转...</p>
+      </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    
+            // 精确选择“24小时代充系统”按钮
+            const rechargeLink = document.querySelector('a.purchase-btn.primary[href="https://gptplus.biz/recharge"]');
+    
+            const modal = document.getElementById('custom-alert-modal');
+            const timerSpan = document.getElementById('modal-timer');
+    
+            if (rechargeLink) {
+                rechargeLink.addEventListener('click', function(event) {
+                    event.preventDefault(); // 阻止默认跳转
+                    
+                    const destinationUrl = this.href;
+    
+                    if (modal) {
+                        modal.classList.add('visible'); // 显示弹窗
+                    }
+    
+                    let timeLeft = 15;
+                    if (timerSpan) {
+                       timerSpan.textContent = timeLeft;
+                    }
+    
+                    // 启动计时器
+                    const countdownInterval = setInterval(() => {
+                        timeLeft--;
+                        if (timerSpan) {
+                            timerSpan.textContent = timeLeft;
+                        }
+                        if (timeLeft <= 0) {
+                            clearInterval(countdownInterval);
+                        }
+                    }, 1000);
+    
+                    // 15秒后跳转
+                    setTimeout(() => {
+                        window.location.href = destinationUrl;
+                    }, 15000);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
