@@ -608,7 +608,7 @@
     <div id="custom-alert-modal" class="modal-overlay">
       <div class="modal-content">
         <p class="message">充值失败或卡住是太多人用通道繁忙，点几次或晚点再试，也可发客服卡密和充值密钥内部处理！（提示会员的等会员到期再充）最近全网都供不应求！请理解！(人工处理时间：9:00-24:00)</p>
-        <p class="timer-text">将在 <strong id="modal-timer">20</strong> 秒后自动跳转...</p>
+        <p class="timer-text">将在 <strong id="modal-timer">10</strong> 秒后自动跳转...</p>
       </div>
     </div>
 
@@ -631,7 +631,7 @@
                         modal.classList.add('visible'); // 显示弹窗
                     }
     
-                    let timeLeft = 20;
+                    let timeLeft = 10;
                     if (timerSpan) {
                        timerSpan.textContent = timeLeft;
                     }
@@ -647,10 +647,10 @@
                         }
                     }, 1000);
     
-                    // 20秒后跳转
+                    // 10秒后跳转
                     setTimeout(() => {
                         window.location.href = destinationUrl;
-                    }, 20000);
+                    }, 10000);
                 });
             }
         });
