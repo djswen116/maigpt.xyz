@@ -604,56 +604,5 @@
             </div>
         </div>
     </div>
-    
-    <div id="custom-alert-modal" class="modal-overlay">
-      <div class="modal-content">
-        <p class="message">目前几个系统并用，请按商品使用说明进入对应的充值网站!</p>
-        <p class="timer-text">将在 <strong id="modal-timer">10</strong> 秒后自动跳转...</p>
-      </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    
-            // 精确选择“24小时代充系统”按钮
-            const rechargeLink = document.querySelector('a.purchase-btn.primary[href="5"]');
-    
-            const modal = document.getElementById('custom-alert-modal');
-            const timerSpan = document.getElementById('modal-timer');
-    
-            if (rechargeLink) {
-                rechargeLink.addEventListener('click', function(event) {
-                    event.preventDefault(); // 阻止默认跳转
-                    
-                    const destinationUrl = this.href;
-    
-                    if (modal) {
-                        modal.classList.add('visible'); // 显示弹窗
-                    }
-    
-                    let timeLeft = 10;
-                    if (timerSpan) {
-                       timerSpan.textContent = timeLeft;
-                    }
-    
-                    // 启动计时器
-                    const countdownInterval = setInterval(() => {
-                        timeLeft--;
-                        if (timerSpan) {
-                            timerSpan.textContent = timeLeft;
-                        }
-                        if (timeLeft <= 0) {
-                            clearInterval(countdownInterval);
-                        }
-                    }, 1000);
-    
-                    // 10秒后跳转
-                    setTimeout(() => {
-                        window.location.href = destinationUrl;
-                    }, 10000);
-                });
-            }
-        });
-    </script>
 </body>
 </html>
