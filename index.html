@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -498,6 +499,179 @@
         #modal-timer {
             color: #f1c40f; /* 计时器数字高亮 */
         }
+
+        /* =========================
+           ✅ Added: Business reminder (Gemini / Claude / Grok / Gpt Pro)
+           - Card shop link points to: https://qf.dtyuedan.cn/shop/lily
+           - Everything else unchanged
+        ========================== */
+        .warning-banner {
+            max-width: 900px;
+            margin: -22px auto 22px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            background: linear-gradient(135deg,
+                rgba(255, 247, 237, 0.95) 0%,
+                rgba(255, 251, 235, 0.92) 55%,
+                rgba(255, 255, 255, 0.90) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-align: left;
+            color: #7c2d12;
+        }
+
+        .warning-inner {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 14px;
+            padding: 16px 16px 14px;
+            position: relative;
+        }
+
+        .warning-inner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+              radial-gradient(circle at 0% 0%, rgba(245, 158, 11, 0.18), transparent 55%),
+              radial-gradient(circle at 100% 0%, rgba(52, 152, 219, 0.10), transparent 55%);
+            pointer-events: none;
+        }
+
+        .warning-icon-wrap {
+            position: relative;
+            z-index: 1;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(245, 158, 11, 0.08));
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.10);
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .warning-icon { font-size: 1.35rem; line-height: 1; }
+
+        .warning-content { position: relative; z-index: 1; }
+
+        .warning-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .warning-title {
+            font-size: 1.12rem;
+            font-weight: 900;
+            letter-spacing: -0.2px;
+            color: #7c2d12;
+        }
+
+        .warning-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 900;
+            color: #7c2d12;
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            white-space: nowrap;
+        }
+
+        .warning-desc {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #9a3412;
+            margin: 0 0 12px;
+            line-height: 1.6;
+        }
+
+        .warning-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .warning-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .warning-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 900;
+            font-size: 0.95rem;
+            color: #7c2d12;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .warning-tag::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.65);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.12);
+        }
+
+        .warning-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 0.95rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, #ffb700 0%, #ff8c00 100%);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            white-space: nowrap;
+        }
+
+        .warning-foot {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: rgba(124, 45, 18, 0.92);
+            line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+            .warning-banner { margin: -10px auto 18px; }
+            .warning-actions { flex-direction: column; align-items: stretch; }
+            .warning-cta { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .warning-inner { grid-template-columns: 44px 1fr; gap: 10px; padding: 12px; }
+            .warning-icon-wrap { width: 44px; height: 44px; border-radius: 12px; }
+            .warning-title { font-size: 1.02rem; }
+            .warning-desc { font-size: 0.92rem; margin-bottom: 10px; }
+            .warning-tag { font-size: 0.9rem; padding: 10px 10px; }
+            .warning-foot { font-size: 0.92rem; }
+        }
     </style>
 </head>
 <body>
@@ -506,6 +680,39 @@
             <h1>🚀 ChatGPT Plus 代充</h1>
             <div class="subtitle">专业 • 安全 • 正规</div>
         </header>
+
+        <!-- ✅ Added business reminder card (Gemini / Claude / Grok / Gpt Pro) -->
+        <div class="warning-banner" role="note" aria-label="业务提醒">
+            <div class="warning-inner">
+                <div class="warning-icon-wrap" aria-hidden="true"><span class="warning-icon">🧩</span></div>
+                <div class="warning-content">
+                    <div class="warning-head">
+                        <div class="warning-title">业务提醒</div>
+                        <div class="warning-badge">多平台</div>
+                    </div>
+
+                    <div class="warning-desc">自助卡网除 <strong>ChatGPT Plus</strong> 外，另提供以下相关业务：</div>
+
+                    <div class="warning-actions">
+                        <div class="warning-tags" aria-label="相关业务">
+                            <span class="warning-tag">Gpt Pro</span>
+                            <span class="warning-tag">Grok</span>
+                            <span class="warning-tag">Claude</span>
+                            <span class="warning-tag">Gemini</span>
+                        </div>
+                        <!-- ✅ Card shop link points to THIS page's card shop -->
+                        <a class="warning-cta" href="https://qf.dtyuedan.cn/shop/lily" target="_blank" rel="noopener noreferrer">
+                            点击进入卡网 →
+                        </a>
+                    </div>
+
+                    <div class="warning-foot">
+                        其他业务请进卡网先查看对应商品说明；如有疑问，联系客服。。<br>
+                        需要了解Gpt plus的更多详情下拉网页就可。
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="main-content">
             <div class="product-section">
@@ -604,5 +811,6 @@
             </div>
         </div>
     </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"8aefcf74525947dfbb6e76abd86c1114","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
