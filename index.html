@@ -1,198 +1,355 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="referrer" content="no-referrer" />
-  <title>站点说明 | gpt188.com</title>
-  <meta name="description" content="本站为独立站点的信息展示页，不收集账号密码，不提供下载或跳转。">
-
-  <!-- Basic hardening (best enforced via server headers; see notes below) -->
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="X-Frame-Options" content="DENY" />
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()" />
-
+  <title>域名暂停使用通告</title>
+  <meta name="description" content="域名已暂停使用通告。熟悉流程可跳转卡网下单，不熟悉可联系在线客服。">
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#111a33;
-      --text:#e8ecff;
-      --muted:#b8c2ff;
-      --line:rgba(255,255,255,.10);
-      --accent:#7aa2ff;
-      --good:#40d39c;
+      --bg1:#0b1220;
+      --bg2:#0f1b33;
+      --card:#0f1a30cc;
+      --border:#223256;
+      --text:#eaf0ff;
+      --muted:#b9c5e6;
+      --accent:#4f8cff;
+      --accent2:#2dd4bf;
+      --danger:#ff5a73;
+      --warn:#ffb020;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", Arial, "Noto Sans CJK SC", sans-serif;
       color:var(--text);
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(122,162,255,.18), transparent 60%),
-                  radial-gradient(900px 500px at 80% 30%, rgba(64,211,156,.12), transparent 60%),
-                  var(--bg);
-      line-height:1.6;
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(79,140,255,.35), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(45,212,191,.18), transparent 55%),
+        radial-gradient(700px 500px at 50% 90%, rgba(255,90,115,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:920px;margin:0 auto;padding:32px 16px 56px}
-    .hero{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius:16px;
-      padding:22px 18px;
+    .wrap{ width:min(920px, 100%); }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
     }
-    .top{
-      display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    .header{
+      padding:26px 26px 18px;
+      border-bottom:1px solid rgba(34,50,86,.65);
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
     }
     .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:6px 10px; border-radius:999px;
-      background:rgba(64,211,156,.12);
-      border:1px solid rgba(64,211,156,.28);
-      color:var(--good); font-weight:600; font-size:13px;
-    }
-    .site{
-      font-weight:800; letter-spacing:.2px; font-size:20px;
-    }
-    .sub{color:var(--muted); margin:10px 0 0}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-      margin-top:16px;
-    }
-    .card{
-      grid-column: span 12;
-      border:1px solid var(--line);
-      background: rgba(17,26,51,.68);
+      flex:0 0 auto;
+      width:44px;height:44px;
       border-radius:14px;
-      padding:16px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(255,90,115,.9), rgba(79,140,255,.85));
+      box-shadow: 0 10px 30px rgba(79,140,255,.22);
     }
-    @media(min-width:820px){
-      .card.half{grid-column: span 6;}
-      .card.third{grid-column: span 4;}
-    }
-    h2{
-      margin:0 0 10px;
-      font-size:16px;
-      letter-spacing:.2px;
-    }
-    ul{margin:0; padding-left:18px; color:var(--muted)}
-    .muted{color:var(--muted)}
-    .hr{height:1px;background:var(--line);margin:14px 0}
-    .kvs{
-      display:grid;
-      grid-template-columns: 140px 1fr;
-      gap:10px;
+    .badge svg{width:22px;height:22px}
+    h1{ margin:0; font-size:20px; letter-spacing:.2px; }
+    .sub{
+      margin:6px 0 0;
       color:var(--muted);
       font-size:14px;
+      line-height:1.6;
     }
-    .kvs b{color:var(--text); font-weight:700}
+    .content{
+      padding:22px 26px 26px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    @media (max-width: 780px){ .content{grid-template-columns:1fr} }
+    .panel{
+      border:1px solid rgba(34,50,86,.65);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(12,18,34,.35);
+    }
+    .title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 10px;
+      font-size:16px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:var(--danger);
+      box-shadow:0 0 0 6px rgba(255,90,115,.12);
+    }
+    .p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+    .actions{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:14px;
+    }
+    .btn{
+      appearance:none;
+      border:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      transition: transform .08s ease, filter .15s ease, box-shadow .15s ease;
+      user-select:none;
+      text-align:center;
+    }
+    .btn:active{ transform: translateY(1px) }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), #7c5cff);
+      color:white;
+      box-shadow: 0 12px 34px rgba(79,140,255,.22);
+    }
+    .btn-ghost{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(34,50,86,.85);
+      color:var(--text);
+    }
+    .btn:hover{ filter:brightness(1.06) }
+
+    .notice{
+      margin-top:10px;
+      border-radius:14px;
+      padding:12px 12px;
+      border:1px solid rgba(255,176,32,.35);
+      background:rgba(255,176,32,.10);
+      color:rgba(255,233,200,.98);
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      line-height:1.6;
+      font-size:13px;
+    }
+    .notice svg{width:18px;height:18px; flex:0 0 auto; margin-top:1px; opacity:.95}
+    .notice b{color:#ffe3b0}
+
+    .info{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .row{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(34,50,86,.65);
+      background:rgba(255,255,255,.02);
+    }
+    .row svg{width:18px;height:18px; flex:0 0 auto; margin-top:1px; opacity:.95}
+    .row b{display:block; font-size:13px; margin-bottom:2px}
+    .row span{color:var(--muted); font-size:13px; line-height:1.6}
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background:rgba(0,0,0,.25);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(34,50,86,.65);
+      color:var(--text);
+    }
     .footer{
-      margin-top:18px;
-      color:var(--muted);
-      font-size:13px;
+      padding:14px 26px;
+      border-top:1px solid rgba(34,50,86,.65);
+      color:rgba(185,197,230,.8);
+      font-size:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
     }
-    .pill{
-      display:inline-block;
-      padding:6px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      margin-right:8px;
-      margin-bottom:8px;
-      color:var(--muted);
-      background: rgba(255,255,255,.03);
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      background:rgba(12,18,34,.92);
+      border:1px solid rgba(34,50,86,.9);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
       font-size:13px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+    .toast.show{
+      opacity:1;
+      transform:translateX(-50%) translateY(-4px);
     }
   </style>
 </head>
 
 <body>
   <main class="wrap">
-    <section class="hero" aria-label="site notice">
-      <div class="top">
-        <div class="site">gpt188.com</div>
-        <div class="badge" title="此页面为静态信息页">
-          ● 安全静态信息页
+    <section class="card" role="region" aria-label="域名暂停使用通告">
+      <header class="header">
+        <div class="badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 9v5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 17.5h.01" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="M10.3 4.5h3.4c.7 0 1.4.4 1.7 1l5.5 10.7c.7 1.4-.3 3.1-1.9 3.1H5.2c-1.6 0-2.6-1.7-1.9-3.1l5.5-10.7c.3-.6 1-1 1.7-1Z"
+                  stroke="white" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
         </div>
-      </div>
-      <p class="sub">
-        本站目前为<strong>信息展示/维护说明</strong>页面。为保障访问安全，本站不提供下载、不做外链跳转、不收集账号凭据。
-      </p>
-      <div class="hr"></div>
-      <div class="kvs">
-        <div><b>站点用途</b></div>
-        <div>个人主页 / 项目展示 / 站点维护公告（可按需替换）</div>
-
-        <div><b>重要声明</b></div>
-        <div>本站为独立运营站点，不代表任何第三方品牌或组织；页面不包含官方授权含义。</div>
-
-        <div><b>联系方式</b></div>
         <div>
-          邮箱：<a href="mailto:djswen@qq.com" rel="nofollow">djswen@qq.com</a>
-          <span class="muted">（如需更换请修改）</span>
+          <h1>域名暂停使用通告</h1>
+          <p class="sub">
+            当前域名已暂停使用。为避免影响下单与服务，请根据以下指引进行操作。
+          </p>
         </div>
+      </header>
+
+      <div class="content">
+        <div class="panel">
+          <h2 class="title"><span class="dot"></span>处理方式</h2>
+          <p class="p">
+            1）如果你已熟悉下单流程：可直接跳转到卡网下单。<br/>
+            2）如果你不熟悉流程，或需要其他咨询与服务：请联系在线客服协助处理。
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary"
+               href="https://fe.dtyuedan.cn/shop/lily"
+               target="_blank" rel="noopener noreferrer">
+              进入卡网下单（自助购买）
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <button class="btn btn-ghost" type="button" id="copyBtn">
+              复制客服微信：14728635263
+            </button>
+
+            <div class="notice" role="note" aria-label="重要提示">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 8v5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 16.5h.01" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <path d="M10.3 3.8h3.4c.7 0 1.3.4 1.6 1l6 11.6c.7 1.4-.3 3.1-1.9 3.1H4.2c-1.6 0-2.6-1.7-1.9-3.1l6-11.6c.3-.6.9-1 1.6-1Z"
+                      stroke="white" stroke-opacity=".9" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+              <div>
+                <b>重要提示：</b>此域名可能随时访问不了，建议添加我们的微信联系方式，以防失联！
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel info">
+          <h2 class="title" style="margin-bottom:6px;">
+            <span class="dot" style="background:var(--accent2); box-shadow:0 0 0 6px rgba(45,212,191,.12)"></span>
+            客服联系
+          </h2>
+
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 7.5c0 5.8 3.7 9.5 9.5 9.5l2-2c.4-.4.9-.5 1.4-.3l2.2 1c.6.3.9 1 .7 1.6-.7 2.2-2.6 3.7-5.1 3.7C10.7 21 3 13.3 3 4.3 3 1.8 4.5 0 6.7 0c.6 0 1.2.3 1.5.9l1 2.2c.2.5.1 1-.3 1.4l-2 2Z"
+                    stroke="white" stroke-opacity=".9" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <b>微信</b>
+              <span><code>14728635263</code>（点击左侧按钮可一键复制）</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 6.5C4 5.1 5.1 4 6.5 4h11C18.9 4 20 5.1 20 6.5v11c0 1.4-1.1 2.5-2.5 2.5h-11C5.1 20 4 18.9 4 17.5v-11Z"
+                    stroke="white" stroke-opacity=".9" stroke-width="1.8"/>
+              <path d="M7 8h10M7 12h7M7 16h8" stroke="white" stroke-opacity=".85" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <b>提示</b>
+              <span>如遇页面无法打开，请直接联系客服获取最新指引。</span>
+            </div>
+          </div>
+
+          <a class="btn btn-ghost"
+             href="https://fe.dtyuedan.cn/shop/lily"
+             target="_blank" rel="noopener noreferrer"
+             style="margin-top:2px;">
+            再次打开下单入口
+          </a>
+        </aside>
       </div>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> 服务通告</span>
+      </footer>
     </section>
 
-    <section class="grid" aria-label="content">
-      <article class="card half">
-        <h2>访问安全承诺</h2>
-        <ul>
-          <li>不收集任何账号密码、验证码（OTP）、登录链接或敏感凭据。</li>
-          <li>不提供可执行文件下载，不投放诱导性广告，不进行误导性跳转。</li>
-          <li>页面为纯静态内容，不含第三方追踪脚本。</li>
-        </ul>
-        <div class="hr"></div>
-        <div class="muted">
-          如你发现疑似滥用或异常内容，请通过上方邮箱联系我，我会尽快处理。
-        </div>
-      </article>
-
-      <article class="card half">
-        <h2>站点内容说明</h2>
-        <div class="pill">个人简介</div>
-        <div class="pill">作品/项目展示</div>
-        <div class="pill">更新日志</div>
-        <div class="pill">联系信息</div>
-        <p class="muted" style="margin:10px 0 0">
-          当前页面为占位/说明页，后续如上线新内容，将保持透明、非误导，并遵守适用的服务条款与法律法规。
-        </p>
-      </article>
-
-      <article class="card third">
-        <h2>隐私说明（简版）</h2>
-        <p class="muted" style="margin:0">
-          本页不使用登录系统、不设置表单提交；不会主动收集个人敏感信息。服务器可能产生基础访问日志用于安全防护（如 IP、时间、UA），仅用于排障与风控。
-        </p>
-      </article>
-
-      <article class="card third">
-        <h2>使用条款（简版）</h2>
-        <p class="muted" style="margin:0">
-          禁止将本站用于任何违法、欺诈、钓鱼、恶意软件传播或垃圾信息相关活动。若发现风险内容，将立即下线处理。
-        </p>
-      </article>
-
-      <article class="card third">
-        <h2>维护与更新</h2>
-        <p class="muted" style="margin:0">
-          如需核验当前页面状态，可截图留存。若域名用途变更，将更新本页说明并保持可联系渠道畅通。
-        </p>
-      </article>
-    </section>
-
-    <div class="footer">
-      © <span id="y"></span> gpt188.com · Static Safety Page
-    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite">已复制到剪贴板</div>
   </main>
 
   <script>
-    // purely local, no network requests
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // 年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 复制客服号
+    const textToCopy = "14728635263";
+    const btn = document.getElementById('copyBtn');
+    const toast = document.getElementById('toast');
+
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(()=>toast.classList.remove('show'), 1600);
+    }
+
+    btn.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(textToCopy);
+        showToast("已复制：14728635263");
+      }catch(e){
+        const ta = document.createElement('textarea');
+        ta.value = textToCopy;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        try{
+          document.execCommand('copy');
+          showToast("已复制：14728635263");
+        }catch(err){
+          showToast("复制失败，请手动复制：14728635263");
+        }
+        document.body.removeChild(ta);
+      }
+    });
   </script>
+
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+          integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+          data-cf-beacon='{"version":"2024.11.0","token":"a661f215a3544d818228e20d19489f79","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+          crossorigin="anonymous"></script>
 </body>
 </html>
