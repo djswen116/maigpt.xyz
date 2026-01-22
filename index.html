@@ -239,14 +239,14 @@
 
           <div class="actions">
             <a class="btn btn-primary"
-               href="https://fe.dtyuedan.cn/shop/gpt1788"
+               href="https://fe.dtyuedan.cn/shop/lily"
                target="_blank" rel="noopener noreferrer">
               进入卡网下单（自助购买）
               <span aria-hidden="true">↗</span>
             </a>
 
             <button class="btn btn-ghost" type="button" id="copyBtn">
-              复制客服微信：hyzw1001
+              复制客服微信：BKL168001
             </button>
 
             <div class="notice" role="note" aria-label="重要提示">
@@ -276,7 +276,7 @@
             </svg>
             <div>
               <b>微信</b>
-              <span><code>hyzw1001</code>（点击左侧按钮可一键复制）</span>
+              <span><code>BKL168001</code>（点击左侧按钮可一键复制）</span>
             </div>
           </div>
 
@@ -293,7 +293,7 @@
           </div>
 
           <a class="btn btn-ghost"
-             href="https://fe.dtyuedan.cn/shop/gpt1788"
+             href="https://fe.dtyuedan.cn/shop/lily"
              target="_blank" rel="noopener noreferrer"
              style="margin-top:2px;">
             再次打开下单入口
@@ -314,7 +314,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // 复制客服号
-    const textToCopy = "hyzw1001";
+    const textToCopy = "BKL168001";
     const btn = document.getElementById('copyBtn');
     const toast = document.getElementById('toast');
 
@@ -328,7 +328,7 @@
     btn.addEventListener('click', async () => {
       try{
         await navigator.clipboard.writeText(textToCopy);
-        showToast("已复制：hyzw1001");
+        showToast("已复制：BKL168001");
       }catch(e){
         const ta = document.createElement('textarea');
         ta.value = textToCopy;
@@ -338,9 +338,9 @@
         ta.focus(); ta.select();
         try{
           document.execCommand('copy');
-          showToast("已复制：hyzw1001");
+          showToast("已复制：BKL168001");
         }catch(err){
-          showToast("复制失败，请手动复制：hyzw1001");
+          showToast("复制失败，请手动复制：BKL168001");
         }
         document.body.removeChild(ta);
       }
