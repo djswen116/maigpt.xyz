@@ -1,816 +1,198 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <title>站点说明 | gpt188.com</title>
+  <meta name="description" content="本站为独立站点的信息展示页，不收集账号密码，不提供下载或跳转。">
 
-    <title>OpenAI官网ChatGPT Plus代充值服务 | 24小时自助GPT代充 - 安全快速</title>
-    <meta name="description" content="提供专业、安全、快速的OpenAI官网ChatGPT Plus会员代充值服务。24小时自助充值系统，支持GPT代充和gptplus会员购买，正规渠道，快速到账，信誉保障。">
-    <meta name="keywords" content="gpt充值, GPT代充, gptplus会员, chatgpt plus代充, openai代充, gpt4充值, gpt会员">
-    <meta property="og:title" content="OpenAI官网ChatGPT Plus代充值服务 | 24小时自助">
-    <meta property="og:description" content="专业、安全、快速的ChatGPT Plus会员代充服务。24小时自助，正规渠道，快速到账。">
-    <meta property="og:type" content="website">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "ChatGPT Plus Subscription Service",
-      "provider": {
-        "@type": "Organization",
-        "name": "ChatGPT Plus 专业代充"
-      },
-      "name": "ChatGPT Plus 会员代充服务",
-      "description": "提供安全、快速的OpenAI官网ChatGPT Plus会员24小时自助代充值服务。我们使用正规渠道，保证账户安全，并承诺快速到账。",
-      "offers": {
-        "@type": "Offer",
-        "price": "175.00",
-        "priceCurrency": "CNY",
-        "name": "ChatGPT Plus 会员 (一个月)",
-        "url": "https://ow521.com/recharge"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "CN"
-      },
-      "keywords": "gpt充值, GPT代充, gptplus会员, chatgpt plus代充"
+  <!-- Basic hardening (best enforced via server headers; see notes below) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()" />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --text:#e8ecff;
+      --muted:#b8c2ff;
+      --line:rgba(255,255,255,.10);
+      --accent:#7aa2ff;
+      --good:#40d39c;
     }
-    </script>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            min-height: 100vh;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            color: #e0e0e0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 头部区域 */
-        .header {
-            text-align: center;
-            padding: 60px 0 50px;
-        }
-
-        .header h1 {
-            color: white;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
-            letter-spacing: -0.5px;
-        }
-
-        .header .subtitle {
-            color: rgba(255,255,255,0.95);
-            font-size: 1.4rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-        }
-
-        /* 主要内容区域 */
-        .main-content {
-            background: #2c3e50;
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            overflow: hidden;
-            margin-bottom: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* 产品展示区 */
-        .product-section {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 2;
-            letter-spacing: 1px;
-            color: #f1c40f;
-        }
-
-        .product-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
-            letter-spacing: -1px;
-        }
-
-        .product-price {
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .price-prefix {
-            font-size: 1.6rem;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-
-        .price-amount {
-            font-size: 5rem;
-            font-weight: 800;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            background: linear-gradient(45deg, #f1c40f, #f39c12);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .price-suffix {
-            font-size: 1.3rem;
-            font-weight: 500;
-            opacity: 0.9;
-        }
-        
-        /* 帮助按钮样式 */
-        .help-btn {
-            display: inline-block;
-            padding: 14px 32px;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            z-index: 2;
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 25px auto 0;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .help-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-        }
-
-        .product-period {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            margin-top: 25px;
-            position: relative;
-            z-index: 2;
-            font-weight: 500;
-        }
-        
-        .product-period .qr-code {
-            width: 300px; 
-            height: 300px;
-            margin: 20px auto;
-            display: block;
-            border-radius: 16px;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* 购买选项 */
-        .purchase-section {
-            padding: 50px 40px;
-            background: #2c3e50;
-        }
-
-        .purchase-title {
-            font-size: 2rem;
-            color: #ecf0f1;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .purchase-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 35px;
-        }
-
-        .purchase-btn {
-            display: block;
-            padding: 30px 25px;
-            text-decoration: none;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-        }
-
-        .purchase-btn.primary {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: white;
-        }
-
-        .purchase-btn.secondary {
-            background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
-            color: white;
-        }
-
-        .purchase-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .purchase-btn h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2;
-            letter-spacing: -0.3px;
-        }
-
-        .purchase-btn p {
-            opacity: 0.9;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
-            font-weight: 500;
-        }
-
-        /* 保障信息 */
-        .guarantee-section {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-        }
-
-        .guarantee-title {
-            font-size: 2rem;
-            color: #ecf0f1;
-            margin-bottom: 35px;
-            text-align: center;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .guarantee-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .guarantee-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 25px;
-            background: #2c3e50;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .guarantee-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-            border-color: #3498db;
-        }
-
-        .guarantee-icon {
-            font-size: 2rem;
-            margin-right: 18px;
-            margin-top: 3px;
-        }
-
-        .guarantee-text h4 {
-            color: #ecf0f1;
-            font-weight: 700;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-            letter-spacing: -0.3px;
-        }
-
-        .guarantee-text p {
-            color: #bdc3c7;
-            font-size: 1rem;
-            line-height: 1.5;
-            font-weight: 400;
-        }
-
-        /* 视频教程区域 */
-        .video-section {
-            padding: 50px 40px;
-            background: #2c3e50;
-            text-align: center;
-        }
-
-        .video-title {
-            font-size: 2rem;
-            color: #3498db;
-            margin-bottom: 25px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .video-player {
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        /* 底部特色 */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #2c3e50 0%, #212f3c 100%);
-        }
-
-        .feature-card {
-            background: rgba(52, 73, 94, 0.8);
-            padding: 35px 25px;
-            border-radius: 18px;
-            text-align: center;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-            backdrop-filter: blur(15px);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(52, 152, 219, 0.3);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border-color: #3498db;
-        }
-
-        .feature-icon {
-            font-size: 2.8rem;
-            margin-bottom: 18px;
-            display: block;
-        }
-
-        .feature-card h4 {
-            color: #ecf0f1;
-            font-weight: 700;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            letter-spacing: -0.3px;
-        }
-
-        .feature-card p {
-            color: #bdc3c7;
-            font-size: 1rem;
-            line-height: 1.5;
-            font-weight: 400;
-        }
-
-        /* 移动端优化 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .header .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .purchase-options {
-                grid-template-columns: 1fr;
-            }
-
-            .product-section, .purchase-section, .guarantee-section, .video-section, .features {
-                padding: 40px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            .header .subtitle {
-                font-size: 1rem;
-            }
-            .product-title {
-                font-size: 2rem;
-            }
-            .price-amount {
-                font-size: 3.5rem;
-            }
-            .purchase-btn h3 {
-                font-size: 1.2rem;
-            }
-            .purchase-btn p {
-                font-size: 1rem;
-            }
-        }
-
-        /* 新增：弹窗样式 */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7); /* 加深遮罩层 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        .modal-overlay.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: #34495e; /* 弹窗背景色匹配主题 */
-            color: #ecf0f1; /* 弹窗文字颜色 */
-            padding: 30px 40px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-            max-width: 90%;
-            width: 450px;
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .modal-overlay.visible .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-content .message {
-           font-size: 1.1rem;
-           line-height: 1.6;
-           margin: 0;
-        }
-        .modal-content .timer-text {
-           color: #bdc3c7; /* 计时器文字颜色 */
-           font-size: 1rem;
-           margin-top: 20px;
-        }
-        #modal-timer {
-            color: #f1c40f; /* 计时器数字高亮 */
-        }
-
-        /* =========================
-           ✅ Added: Business reminder (Gemini / Claude / Grok / Gpt Pro)
-           - Card shop link points to: https://fe.dtyuedan.cn/shop/lily
-           - Everything else unchanged
-        ========================== */
-        .warning-banner {
-            max-width: 900px;
-            margin: -22px auto 22px;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            background: linear-gradient(135deg,
-                rgba(255, 247, 237, 0.95) 0%,
-                rgba(255, 251, 235, 0.92) 55%,
-                rgba(255, 255, 255, 0.90) 100%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            text-align: left;
-            color: #7c2d12;
-        }
-
-        .warning-inner {
-            display: grid;
-            grid-template-columns: 56px 1fr;
-            gap: 14px;
-            padding: 16px 16px 14px;
-            position: relative;
-        }
-
-        .warning-inner::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-              radial-gradient(circle at 0% 0%, rgba(245, 158, 11, 0.18), transparent 55%),
-              radial-gradient(circle at 100% 0%, rgba(52, 152, 219, 0.10), transparent 55%);
-            pointer-events: none;
-        }
-
-        .warning-icon-wrap {
-            position: relative;
-            z-index: 1;
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(245, 158, 11, 0.08));
-            border: 1px solid rgba(245, 158, 11, 0.25);
-            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.10);
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .warning-icon { font-size: 1.35rem; line-height: 1; }
-
-        .warning-content { position: relative; z-index: 1; }
-
-        .warning-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 6px;
-            flex-wrap: wrap;
-        }
-
-        .warning-title {
-            font-size: 1.12rem;
-            font-weight: 900;
-            letter-spacing: -0.2px;
-            color: #7c2d12;
-        }
-
-        .warning-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            font-weight: 900;
-            color: #7c2d12;
-            background: rgba(245, 158, 11, 0.14);
-            border: 1px solid rgba(245, 158, 11, 0.28);
-            white-space: nowrap;
-        }
-
-        .warning-desc {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #9a3412;
-            margin: 0 0 12px;
-            line-height: 1.6;
-        }
-
-        .warning-actions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-
-        .warning-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-
-        .warning-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            border-radius: 999px;
-            font-weight: 900;
-            font-size: 0.95rem;
-            color: #7c2d12;
-            background: rgba(255, 255, 255, 0.72);
-            border: 1px solid rgba(245, 158, 11, 0.22);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
-            white-space: nowrap;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .warning-tag::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            border-radius: 999px;
-            background: rgba(245, 158, 11, 0.65);
-            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.12);
-        }
-
-        .warning-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 10px 14px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 0.95rem;
-            color: #ffffff;
-            background: linear-gradient(135deg, #ffb700 0%, #ff8c00 100%);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            white-space: nowrap;
-        }
-
-        .warning-foot {
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: rgba(124, 45, 18, 0.92);
-            line-height: 1.55;
-        }
-
-        @media (max-width: 768px) {
-            .warning-banner { margin: -10px auto 18px; }
-            .warning-actions { flex-direction: column; align-items: stretch; }
-            .warning-cta { width: 100%; }
-        }
-
-        @media (max-width: 480px) {
-            .warning-inner { grid-template-columns: 44px 1fr; gap: 10px; padding: 12px; }
-            .warning-icon-wrap { width: 44px; height: 44px; border-radius: 12px; }
-            .warning-title { font-size: 1.02rem; }
-            .warning-desc { font-size: 0.92rem; margin-bottom: 10px; }
-            .warning-tag { font-size: 0.9rem; padding: 10px 10px; }
-            .warning-foot { font-size: 0.92rem; }
-        }
-    </style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(122,162,255,.18), transparent 60%),
+                  radial-gradient(900px 500px at 80% 30%, rgba(64,211,156,.12), transparent 60%),
+                  var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:920px;margin:0 auto;padding:32px 16px 56px}
+    .hero{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:16px;
+      padding:22px 18px;
+    }
+    .top{
+      display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      background:rgba(64,211,156,.12);
+      border:1px solid rgba(64,211,156,.28);
+      color:var(--good); font-weight:600; font-size:13px;
+    }
+    .site{
+      font-weight:800; letter-spacing:.2px; font-size:20px;
+    }
+    .sub{color:var(--muted); margin:10px 0 0}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:16px;
+    }
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--line);
+      background: rgba(17,26,51,.68);
+      border-radius:14px;
+      padding:16px;
+    }
+    @media(min-width:820px){
+      .card.half{grid-column: span 6;}
+      .card.third{grid-column: span 4;}
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    ul{margin:0; padding-left:18px; color:var(--muted)}
+    .muted{color:var(--muted)}
+    .hr{height:1px;background:var(--line);margin:14px 0}
+    .kvs{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .kvs b{color:var(--text); font-weight:700}
+    .footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      margin-right:8px;
+      margin-bottom:8px;
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>🚀 ChatGPT Plus 代充</h1>
-            <div class="subtitle">专业 • 安全 • 正规</div>
-        </header>
-
-        <!-- ✅ Added business reminder card (Gemini / Claude / Grok / Gpt Pro) -->
-        <div class="warning-banner" role="note" aria-label="业务提醒">
-            <div class="warning-inner">
-                <div class="warning-icon-wrap" aria-hidden="true"><span class="warning-icon">🧩</span></div>
-                <div class="warning-content">
-                    <div class="warning-head">
-                        <div class="warning-title">业务提醒</div>
-                        <div class="warning-badge">多平台</div>
-                    </div>
-
-                    <div class="warning-desc">自助卡网除 <strong>ChatGPT Plus</strong> 外，另提供以下相关业务：</div>
-
-                    <div class="warning-actions">
-                        <div class="warning-tags" aria-label="相关业务">
-                            <span class="warning-tag">Gpt Pro</span>
-                            <span class="warning-tag">Grok</span>
-                            <span class="warning-tag">Claude</span>
-                            <span class="warning-tag">Gemini</span>
-                        </div>
-                        <!-- ✅ Card shop link points to THIS page's card shop -->
-                        <a class="warning-cta" href="https://fe.dtyuedan.cn/shop/lily" target="_blank" rel="noopener noreferrer">
-                            点击进入卡网 →
-                        </a>
-                    </div>
-
-                    <div class="warning-foot">
-                        其他业务请进卡网先查看对应商品说明；如有疑问，联系客服。。<br>
-                        需要了解Gpt plus的更多详情下拉网页就可。
-                    </div>
-                </div>
-            </div>
+  <main class="wrap">
+    <section class="hero" aria-label="site notice">
+      <div class="top">
+        <div class="site">gpt188.com</div>
+        <div class="badge" title="此页面为静态信息页">
+          ● 安全静态信息页
         </div>
+      </div>
+      <p class="sub">
+        本站目前为<strong>信息展示/维护说明</strong>页面。为保障访问安全，本站不提供下载、不做外链跳转、不收集账号凭据。
+      </p>
+      <div class="hr"></div>
+      <div class="kvs">
+        <div><b>站点用途</b></div>
+        <div>个人主页 / 项目展示 / 站点维护公告（可按需替换）</div>
 
-        <div class="main-content">
-            <div class="product-section">
-                <div class="product-badge">✨ 不卷价格 • 只卷质量</div>
-                <h2 class="product-title">官网 ChatGPT Plus 会员</h2>
-                <div class="product-price">
-                    <span class="price-prefix">仅需</span>
-                    <div class="price-amount">¥190</div>
-                    <span class="price-suffix">/月</span>
-                </div>
-                <div class="product-period">
-                    <img src="image/27.png" alt="客服微信二维码" class="qr-code">
-                    <p>防失联客服微信【备注：Gpt代充】<br>(防添加频繁，会通过比较慢，请知悉)</p>
-                </div>
-                <a href="https://xcne4xisov32.feishu.cn/wiki/HesowFPhhiYgi7kHNuzcbX5gnSd" class="help-btn" target="_blank" rel="noopener noreferrer">📖 点此查看使用帮助</a>
-            </div>
+        <div><b>重要声明</b></div>
+        <div>本站为独立运营站点，不代表任何第三方品牌或组织；页面不包含官方授权含义。</div>
 
-            <div class="purchase-section">
-                <h3 class="purchase-title">💳 先买卡密再进代充系统</h3>
-                <div class="purchase-options">
-                    <a href="https://fe.dtyuedan.cn/shop/lily" class="purchase-btn secondary" target="_blank" rel="noopener noreferrer">
-                        <h3>🎫 卡密自助购买</h3>
-                        <p>即买即发，自动发货</p>
-                    </a>
-                    <a href="5" class="purchase-btn primary" rel="noopener noreferrer">
-                        <h3>🤖 24小时代充系统</h3>
-                        <p>先买卡密，再进代充</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="guarantee-section">
-                <h3 class="guarantee-title">🛡️ 服务保障</h3>
-                <div class="guarantee-list">
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon">🔒</div>
-                        <div class="guarantee-text">
-                            <h4>正规可靠</h4>
-                            <p>对接美区ios充值，不获取密码，安全保障。</p>
-                        </div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon">💰</div>
-                        <div class="guarantee-text">
-                            <h4>强力保障</h4>
-                            <p>因充值封号0%，其他原因也无理由按天退款。</p>
-                        </div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon">⚡</div>
-                        <div class="guarantee-text">
-                            <h4>快速到账</h4>
-                            <p>24小时自助充值，5分钟内开好</p>
-                        </div>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon">🧾</div>
-                        <div class="guarantee-text">
-                            <h4>可开发票</h4>
-                            <p>如需开具发票（需额外加点），请联系我们的客服人员。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="video-section">
-                <h3 class="video-title">🎬 操作流程</h3>
-                <div class="video-container">
-                    <video
-                        class="video-player"
-                        controls
-                        title="GPT Plus代充操作视频教程"
-                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%232c3e50'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter' font-size='24' fill='%23bdc3c7'%3E视频教程%3C/text%3E%3C/svg%3E">
-                        <source src="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/514196921671.mp4" type="video/mp4">
-                        您的浏览器不支持视频播放
-                    </video>
-                </div>
-            </div>
-
-            <div class="features">
-                <div class="feature-card">
-                    <span class="feature-icon">⭐</span>
-                    <h4>信誉保证</h4>
-                    <p>多年经验，值得信赖</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🎯</span>
-                    <h4>专业服务</h4>
-                    <p>专注Gpt Plus代充服务</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">💎</span>
-                    <h4>品质保障</h4>
-                    <p>高质量服务，用户好评</p>
-                </div>
-            </div>
+        <div><b>联系方式</b></div>
+        <div>
+          邮箱：<a href="mailto:djswen@qq.com" rel="nofollow">djswen@qq.com</a>
+          <span class="muted">（如需更换请修改）</span>
         </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="content">
+      <article class="card half">
+        <h2>访问安全承诺</h2>
+        <ul>
+          <li>不收集任何账号密码、验证码（OTP）、登录链接或敏感凭据。</li>
+          <li>不提供可执行文件下载，不投放诱导性广告，不进行误导性跳转。</li>
+          <li>页面为纯静态内容，不含第三方追踪脚本。</li>
+        </ul>
+        <div class="hr"></div>
+        <div class="muted">
+          如你发现疑似滥用或异常内容，请通过上方邮箱联系我，我会尽快处理。
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>站点内容说明</h2>
+        <div class="pill">个人简介</div>
+        <div class="pill">作品/项目展示</div>
+        <div class="pill">更新日志</div>
+        <div class="pill">联系信息</div>
+        <p class="muted" style="margin:10px 0 0">
+          当前页面为占位/说明页，后续如上线新内容，将保持透明、非误导，并遵守适用的服务条款与法律法规。
+        </p>
+      </article>
+
+      <article class="card third">
+        <h2>隐私说明（简版）</h2>
+        <p class="muted" style="margin:0">
+          本页不使用登录系统、不设置表单提交；不会主动收集个人敏感信息。服务器可能产生基础访问日志用于安全防护（如 IP、时间、UA），仅用于排障与风控。
+        </p>
+      </article>
+
+      <article class="card third">
+        <h2>使用条款（简版）</h2>
+        <p class="muted" style="margin:0">
+          禁止将本站用于任何违法、欺诈、钓鱼、恶意软件传播或垃圾信息相关活动。若发现风险内容，将立即下线处理。
+        </p>
+      </article>
+
+      <article class="card third">
+        <h2>维护与更新</h2>
+        <p class="muted" style="margin:0">
+          如需核验当前页面状态，可截图留存。若域名用途变更，将更新本页说明并保持可联系渠道畅通。
+        </p>
+      </article>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> gpt188.com · Static Safety Page
     </div>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"8aefcf74525947dfbb6e76abd86c1114","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+  </main>
+
+  <script>
+    // purely local, no network requests
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
