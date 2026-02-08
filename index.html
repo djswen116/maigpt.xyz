@@ -1,88 +1,155 @@
+
 <!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>请按指引操作</title>
-  <meta name="description" content="请按指引操作,熟悉流程可跳转卡网下单，不熟悉可联系在线客服。">
+  <meta name="description" content="请按指引操作,熟悉流程可跳转下单，不熟悉可联系在线客服。">
   <style>
     :root{
-      --bg1:#ffffff;
-      --bg2:#faf7f2;
-      --card:#ffffffcc;
-      --border:rgba(17,24,39,.10);
-      --text:#111827;
-      --muted:#6b7280;
-      --accent:#2563eb;
-      --accent2:#22c55e;
+      --bg1:#f7f9ff;
+      --bg2:#ffffff;
+
+      --card:rgba(255,255,255,.92);
+      --border:rgba(15,23,42,.10);
+      --text:#0f172a;
+      --muted:#64748b;
+
+      --primary:#2563eb;
+      --primary2:#1d4ed8;
       --danger:#ef4444;
-      --warn:#f59e0b;
-      --shadow: 0 14px 40px rgba(17,24,39,.10);
+
+      --shadow: 0 18px 60px rgba(15,23,42,.10);
+      --shadow2: 0 10px 30px rgba(15,23,42,.08);
       --radius: 18px;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
     body{
       margin:0;
       min-height:100vh;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", Arial, "Noto Sans CJK SC", sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 600px at 15% 10%, rgba(37,99,235,.16), transparent 60%),
-        radial-gradient(900px 600px at 85% 20%, rgba(245,158,11,.10), transparent 55%),
-        radial-gradient(700px 500px at 50% 90%, rgba(34,197,94,.10), transparent 55%),
+        radial-gradient(900px 600px at 12% 12%, rgba(37,99,235,.12), transparent 60%),
+        radial-gradient(800px 520px at 85% 18%, rgba(37,99,235,.08), transparent 58%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
       display:flex;
       align-items:center;
       justify-content:center;
       padding:24px;
     }
-    .wrap{ width:min(920px, 100%); }
+
+    .wrap{ width:min(960px, 100%); }
+
     .card{
       background:var(--card);
       border:1px solid var(--border);
       box-shadow:var(--shadow);
-      border-radius:var(--radius);
+      border-radius:calc(var(--radius) + 6px);
       overflow:hidden;
       backdrop-filter: blur(10px);
+      position:relative;
     }
+
+    /* 顶部细条统一主色，不再多色渐变 */
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0;
+      height:3px;
+      background: linear-gradient(90deg, rgba(37,99,235,.95), rgba(29,78,216,.75));
+    }
+
     .header{
       padding:26px 26px 18px;
-      border-bottom:1px solid rgba(17,24,39,.10);
+      border-bottom:1px solid rgba(15,23,42,.08);
       display:flex;
       gap:16px;
       align-items:flex-start;
     }
+
     .badge{
       flex:0 0 auto;
-      width:44px;height:44px;
-      border-radius:14px;
+      width:46px;height:46px;
+      border-radius:16px;
       display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(239,68,68,.92), rgba(37,99,235,.92));
-      box-shadow: 0 10px 28px rgba(37,99,235,.16);
+      background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(29,78,216,.88));
+      box-shadow: 0 14px 34px rgba(37,99,235,.18);
     }
     .badge svg{width:22px;height:22px}
     .badge svg path{ stroke:#fff !important; }
 
-    h1{ margin:0; font-size:20px; letter-spacing:.2px; }
+    h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:.2px;
+      line-height:1.2;
+    }
+
     .sub{
-      margin:6px 0 0;
+      margin:10px 0 0;
       color:var(--muted);
       font-size:14px;
-      line-height:1.6;
+      line-height:1.75;
     }
+
+    /* 让“过年不打烊”也统一主色系 */
+    .holiday-note{
+      margin-top:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.6px;
+      color:rgba(255,255,255,.98);
+      background: linear-gradient(135deg, rgba(37,99,235,.95), rgba(29,78,216,.85));
+      border:1px solid rgba(255,255,255,.28);
+      box-shadow: 0 14px 34px rgba(15,23,42,.12);
+      position:relative;
+      overflow:hidden;
+      animation: breath 2.8s ease-in-out infinite;
+    }
+    .holiday-note::before{ content:"🧧"; line-height:1; font-size:14px; }
+    .holiday-note::after{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:999px;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.20) 50%, transparent 100%);
+      transform: translateX(-60%);
+      opacity:0;
+      pointer-events:none;
+      animation: shine 4.8s ease-in-out infinite;
+    }
+    @keyframes breath{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-1px)} }
+    @keyframes shine{ 0%{transform:translateX(-60%);opacity:0} 15%{opacity:.55} 30%{transform:translateX(60%);opacity:0} 100%{transform:translateX(60%);opacity:0} }
+    @media (prefers-reduced-motion: reduce){
+      .holiday-note{ animation:none; }
+      .holiday-note::after{ animation:none; }
+    }
+
     .content{
       padding:22px 26px 26px;
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.25fr .75fr;
       gap:18px;
     }
-    @media (max-width: 780px){ .content{grid-template-columns:1fr} }
+    @media (max-width: 820px){ .content{ grid-template-columns:1fr; } }
+
     .panel{
-      border:1px solid rgba(17,24,39,.10);
-      border-radius:16px;
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:18px;
       padding:18px;
-      background:rgba(255,255,255,.88);
+      background:rgba(255,255,255,.94);
+      box-shadow: var(--shadow2);
     }
+
     .title{
       display:flex;
       align-items:center;
@@ -90,29 +157,33 @@
       margin:0 0 10px;
       font-size:16px;
     }
+
     .dot{
       width:10px;height:10px;border-radius:999px;
-      background:var(--danger);
-      box-shadow:0 0 0 6px rgba(239,68,68,.10);
+      background:var(--primary);
+      box-shadow:0 0 0 6px rgba(37,99,235,.12);
     }
+
     .p{
       margin:0;
       color:var(--muted);
       font-size:14px;
-      line-height:1.75;
+      line-height:1.85;
     }
+
     .actions{
       display:flex;
       flex-direction:column;
       gap:10px;
       margin-top:14px;
     }
+
     .btn{
       appearance:none;
       border:none;
       border-radius:14px;
       padding:12px 14px;
-      font-weight:700;
+      font-weight:800;
       cursor:pointer;
       text-decoration:none;
       display:inline-flex;
@@ -122,82 +193,106 @@
       transition: transform .08s ease, filter .15s ease, box-shadow .15s ease;
       user-select:none;
       text-align:center;
+      letter-spacing:.2px;
     }
     .btn:active{ transform: translateY(1px) }
+    .btn:hover{ filter:brightness(1.03) }
+
     .btn-primary{
-      background:linear-gradient(180deg, var(--accent), #3b82f6);
+      background:linear-gradient(180deg, var(--primary), var(--primary2));
       color:white;
-      box-shadow: 0 12px 28px rgba(37,99,235,.18);
+      box-shadow: 0 14px 34px rgba(37,99,235,.22);
     }
+    .btn-primary span{ font-weight:900; opacity:.95 }
+
     .btn-ghost{
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(17,24,39,.12);
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(15,23,42,.12);
       color:var(--text);
     }
-    .btn:hover{ filter:brightness(1.03) }
 
     .notice{
       margin-top:10px;
       border-radius:14px;
       padding:12px 12px;
-      border:1px solid rgba(245,158,11,.32);
-      background:rgba(245,158,11,.12);
-      color:#6b3f00;
+      border:1px solid rgba(37,99,235,.22);
+      background:rgba(37,99,235,.08);
+      color:rgba(15,23,42,.92);
       display:flex;
       gap:10px;
       align-items:flex-start;
-      line-height:1.6;
+      line-height:1.7;
       font-size:13px;
     }
-    .notice svg{width:18px;height:18px; flex:0 0 auto; margin-top:1px; opacity:.95}
-    .notice b{color:#4b2c00}
-    .notice svg path{ stroke:#6b3f00 !important; }
+    .notice svg{width:18px;height:18px; flex:0 0 auto; margin-top:2px; opacity:.95}
+    .notice b{color:rgba(15,23,42,.95)}
+    .notice svg path{ stroke: rgba(37,99,235,.95) !important; }
 
     .info{
       display:flex;
       flex-direction:column;
       gap:12px;
     }
+
     .row{
       display:flex;
       align-items:flex-start;
       gap:10px;
       padding:12px 12px;
       border-radius:14px;
-      border:1px solid rgba(17,24,39,.10);
-      background:rgba(255,255,255,.76);
+      border:1px solid rgba(15,23,42,.10);
+      background:rgba(255,255,255,.86);
     }
-    .row svg{width:18px;height:18px; flex:0 0 auto; margin-top:1px; opacity:.95}
+    .row svg{width:18px;height:18px; flex:0 0 auto; margin-top:2px; opacity:.92}
     .row b{display:block; font-size:13px; margin-bottom:2px}
-    .row span{color:var(--muted); font-size:13px; line-height:1.6}
-    .row svg path{ stroke: var(--text) !important; }
+    .row span{color:var(--muted); font-size:13px; line-height:1.65}
 
     code{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      background:rgba(17,24,39,.05);
+      background:rgba(15,23,42,.05);
       padding:2px 6px;
       border-radius:8px;
-      border:1px solid rgba(17,24,39,.10);
+      border:1px solid rgba(15,23,42,.10);
       color:var(--text);
     }
+
+    .link-hint{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px dashed rgba(37,99,235,.30);
+      background:rgba(37,99,235,.06);
+      color:rgba(15,23,42,.92);
+      font-size:13px;
+      line-height:1.65;
+    }
+    .link-hint a{
+      color:var(--primary);
+      font-weight:900;
+      text-decoration:none;
+    }
+    .link-hint a:hover{ text-decoration:underline; }
+
     .footer{
       padding:14px 26px;
-      border-top:1px solid rgba(17,24,39,.10);
-      color:rgba(107,114,128,.95);
+      border-top:1px solid rgba(15,23,42,.08);
+      color:rgba(100,116,139,.95);
       font-size:12px;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       justify-content:space-between;
       align-items:center;
+      background: rgba(255,255,255,.55);
     }
+
     .toast{
       position:fixed;
       left:50%;
       bottom:18px;
       transform:translateX(-50%);
-      background:rgba(17,24,39,.94);
-      border:1px solid rgba(255,255,255,.18);
+      background:rgba(15,23,42,.92);
+      border:1px solid rgba(255,255,255,.16);
       color:#fff;
       padding:10px 12px;
       border-radius:12px;
@@ -228,8 +323,10 @@
         </div>
         <div>
           <h1>请按指引操作</h1>
+          <div class="holiday-note">过年不打烊，客服正常在线！</div>
           <p class="sub">
-            为避免影响下单与服务，请根据以下指引进行操作。
+            为避免影响下单与服务，请根据以下指引进行操作。<br/>
+            如你已熟悉流程，可直接跳转新入口；不熟悉可联系客服协助。
           </p>
         </div>
       </header>
@@ -237,22 +334,28 @@
       <div class="content">
         <div class="panel">
           <h2 class="title"><span class="dot"></span>处理方式</h2>
+
           <p class="p">
-            1）如果你已熟悉下单流程：可直接跳转到卡网下单。<br/>
-            2）如果你不熟悉流程，或需要其他咨询与服务：请联系客服协助处理。
+            1）已熟悉下单流程：直接进入新网址自助下单。<br/>
+            2）不熟悉流程 / 需要咨询：联系在线客服协助处理。
           </p>
 
           <div class="actions">
             <a class="btn btn-primary"
-               href="https://fe.dtyuedan.cn/shop/lily"
+               href="https://lilyplus.net"
                target="_blank" rel="noopener noreferrer">
-              进入卡网下单（自助购买）
+              进入新入口（lilyplus.net）
               <span aria-hidden="true">↗</span>
             </a>
 
             <button class="btn btn-ghost" type="button" id="copyBtn">
               复制客服微信：BKP168001
             </button>
+
+            <div class="link-hint">
+              当前最新入口：<a href="https://lilyplus.net" target="_blank" rel="noopener noreferrer">lilyplus.net</a><br/>
+              建议收藏或保存客服联系方式，避免入口变动影响使用。
+            </div>
 
             <div class="notice" role="note" aria-label="重要提示">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -262,7 +365,7 @@
                       stroke="white" stroke-opacity=".9" stroke-width="1.6" stroke-linejoin="round"/>
               </svg>
               <div>
-                <b>重要提示：</b>此域名可能随时访问不了，建议添加我们的微信联系方式，以防失联！
+                <b>重要提示：</b>maigpt.xyz 可能随时访问不了，建议加上我们的联系方式和保留新网址，以防失联！
               </div>
             </div>
           </div>
@@ -270,7 +373,7 @@
 
         <aside class="panel info">
           <h2 class="title" style="margin-bottom:6px;">
-            <span class="dot" style="background:var(--accent2); box-shadow:0 0 0 6px rgba(45,212,191,.12)"></span>
+            <span class="dot"></span>
             客服联系
           </h2>
 
@@ -293,22 +396,30 @@
             </svg>
             <div>
               <b>提示</b>
-              <span>如遇自助卡网页面无法打开，请直接联系客服</span>
+              <span>如遇页面无法打开 / 跳转异常，请直接联系客服处理</span>
             </div>
           </div>
 
           <a class="btn btn-ghost"
-             href="https://fe.dtyuedan.cn/shop/lily"
+             href="https://lilyplus.net"
              target="_blank" rel="noopener noreferrer"
              style="margin-top:2px;">
-            点击打开下单入口
+            点击打开新入口（lilyplus.net）
+          </a>
+
+          <a class="btn btn-primary"
+             href="https://fe.dtyuedan.cn/shop/gptplus"
+             target="_blank" rel="noopener noreferrer"
+             style="margin-top:10px;">
+            我很熟练操作，直接卡网下单
+            <span aria-hidden="true">↗</span>
           </a>
         </aside>
       </div>
 
       <footer class="footer">
         <span>© <span id="year"></span> 服务通告</span>
-        <span>请保存客服联系方式，以便及时获取最新入口，防止失联</span>
+        <span>请保存客服联系方式，获取最新入口，防止失联</span>
       </footer>
     </section>
 
@@ -316,10 +427,8 @@
   </main>
 
   <script>
-    // 年份
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 复制客服号
     const textToCopy = "BKP168001";
     const btn = document.getElementById('copyBtn');
     const toast = document.getElementById('toast');
@@ -334,7 +443,7 @@
     btn.addEventListener('click', async () => {
       try{
         await navigator.clipboard.writeText(textToCopy);
-        showToast("已复制：" + textToCopy);
+        showToast("已复制：BKP168001");
       }catch(e){
         const ta = document.createElement('textarea');
         ta.value = textToCopy;
@@ -344,19 +453,20 @@
         ta.focus(); ta.select();
         try{
           document.execCommand('copy');
-          showToast("已复制：" + textToCopy);
+          showToast("已复制：BKP168001");
         }catch(err){
-          showToast("复制失败，请手动复制：" + textToCopy);
+          showToast("复制失败，请手动复制：BKP168001");
         }
         document.body.removeChild(ta);
       }
     });
   </script>
 
-  <!-- Cloudflare beacon（保留一个即可） -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-          integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-          data-cf-beacon='{"version":"2024.11.0","token":"a661f215a3544d818228e20d19489f79","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-          crossorigin="anonymous"></script>
+  <script defer
+    src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"a661f215a3544d818228e20d19489f79","r":1}'
+    crossorigin="anonymous">
+  </script>
 </body>
 </html>
